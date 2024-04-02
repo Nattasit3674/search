@@ -34,7 +34,7 @@ if(isset($_GET['query']) && !empty($_GET['query'])) {
         ที่เว็บไซต์ <a href='https://provider.id.th'>ProviderID</a>
         ตามคู่มือนี้<br><a target='blank' href='http://localhost/search/pdf/การลงทะเบียน Provider_ID ด้วยแอพหมอพร้อม.pdf'>การลงทะเบียน Provider_ID ด้วยแอพหมอพร้อม</a>
         <br><a target='blank' href='http://localhost/search/pdf/คู่มือการลงทะเบียน Provider ID ด้วยแอพ THAID.pdf'>คู่มือการลงทะเบียน Provider ID ด้วยแอพ THAID</a>
-        <br><br><img src='http://localhost/search/pdf/S__3186712.jpg' width='600' height='1000'>";
+        <br><br><img src='http://localhost/search/pdf/S__3186712.jpg' width='600' height='900'>";
     }
     $conn->close();
 } else {
