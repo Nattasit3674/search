@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Employees</title>
+    <style>
+        /* CSS สำหรับการจัดรูปแบบหน้าเว็บ */
+        #result {
+            display: none; /* ซ่อนผลลัพธ์ของการค้นหาเริ่มต้น */
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Search Employees</h1>
+    <input type="text" id="searchInput" placeholder="Enter search query">
+    <button onclick="search()">Search</button>
+    
+    <div id="result">
+        <!-- ตำแหน่งที่แสดงผลลัพธ์ของการค้นหา -->
+    </div>
+
+    <script>
+        // JavaScript สำหรับการโหลดข้อมูลที่ค้นหาและแสดงผล
+        function search() {
+            var query = document.getElementById("searchInput").value;
+            // ส่งคำค้นหาไปยังไฟล์ PHP ที่ทำการค้นหาข้อมูล
+            fetch("search.php?query=" + query)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result").innerHTML = data;
+                document.getElementById("result").style.display = "block"; // แสดงผลลัพธ์หลังจากค้นหาเสร็จสิ้น
+            });
+        }
+    </script>
+    </div>
+</body>
+</html>
