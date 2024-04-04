@@ -4,6 +4,7 @@ $servername = "172.18.2.23";
 $username = "admin_sat";
 $password = "7MPlJPZ68v";
 $dbname = "admin_sat";
+
 // ตรวจสอบว่ามีการส่งคำค้นหามาหรือไม่
 if(isset($_POST['query']) && !empty($_POST['query'])) {
     // สร้างการเชื่อมต่อ
