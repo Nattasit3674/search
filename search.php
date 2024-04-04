@@ -1,25 +1,25 @@
 <?php
 // เชื่อมต่อ Navicat
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-
+$servername = "172.18.2.23";
+$username = "admin_sat";
+$password = "7MPlJPZ68v";
+$dbname = "admin_sat";
 // ตรวจสอบว่ามีการส่งคำค้นหามาหรือไม่
-if(isset($_GET['query']) && !empty($_GET['query'])) {
+if(isset($_POST['query']) && !empty($_POST['query'])) {
     // สร้างการเชื่อมต่อ
     $conn = new mysqli($servername, $username, $password, $dbname);
-
+    $conn->set_charset("utf8");
     // ตรวจสอบการเชื่อมต่อ
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
     // รับคำค้นหาจากแบบฟอร์ม
-    $query = $_GET['query'];
+    $query = $_POST['query'];
 
     // ค้นหาข้อมูลในฐานข้อมูล
-    $sql = "SELECT * FROM `employees` WHERE `Name (TH)` LIKE '%$query%'";
+    $sql = "SELECT * FROM `employees_test` WHERE `Name (TH)` LIKE '%%$query%%'";
+    //echo $sql = "SELECT * FROM `employees`";
     $result = $conn->query($sql);
 
     // แสดงข้อมูล
@@ -37,7 +37,7 @@ if(isset($_GET['query']) && !empty($_GET['query'])) {
         <br><br><img src='http://localhost/search/pdf/S__3186712.jpg' width='600' height='900'>";
     }
     $conn->close();
-} else {
-    echo "กรุณาป้อนคำค้นหา";
-}
+    } else {
+        echo "กรุณาป้อนคำค้นหา";
+    }
 ?>
