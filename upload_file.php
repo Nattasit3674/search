@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// ตรวจสอบว่ามี session ของผู้ใช้และ fig code ตรงกับค่าที่กำหนด
+if (!isset($_SESSION['fig_code']) || $_SESSION['fig_code'] !== 'admin1234') {
+    // ถ้าไม่ตรงกับเงื่อนไข ให้เด้งกลับไปที่หน้า index.php
+    header("Location: index");
+    exit(); // ออกจากการทำงานของสคริปต์
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +56,8 @@
     </style>
 </head>
 <body>
+
+
     <div class="container">
         <h2>Upload an Excel File</h2>
         <form action="upload_excel" method="post" enctype="multipart/form-data" id="uploadForm">

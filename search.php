@@ -1,19 +1,10 @@
 <?php
 // เชื่อมต่อ Navicat
-$servername = "172.18.2.23";
-$username = "admin_sat";
-$password = "7MPlJPZ68v";
-$dbname = "admin_sat";
-
+include 'database.php';
 // ตรวจสอบว่ามีการส่งคำค้นหามาหรือไม่
 if(isset($_POST['query']) && !empty($_POST['query'])) {
     // สร้างการเชื่อมต่อ
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $conn->set_charset("utf8");
-    // ตรวจสอบการเชื่อมต่อ
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+
 
     // รับคำค้นหาจากแบบฟอร์ม
     $query = $_POST['query'];

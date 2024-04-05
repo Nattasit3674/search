@@ -34,14 +34,15 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <h2>Login with Fig</h2>
-        <form action="process_login.php" method="post">
+        <form action="process_login" method="post">
             <label for="fig_code">Enter Fig Code:</label>
             <input type="password" id="fig_code" name="fig_code" placeholder="Enter your Fig code.." required>
             <input type="submit" value="Login">
         </form>
-        <a href="index.html" class="btn btn-secondary">Back</a>
+        <a href="index" class="btn btn-secondary">Back</a>
     </div>
 </body>
 </html>

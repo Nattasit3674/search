@@ -8,25 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 <body>
-    
 
 <?php
 require 'vendor/autoload.php';
-
+date_default_timezone_set("Asia/Bangkok");
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 // กำหนดค่าการเชื่อมต่อฐานข้อมูล MySQL
-$servername = "172.18.2.23";
-$username = "admin_sat";
-$password = "7MPlJPZ68v";
-$dbname = "admin_sat";
-
-// เชื่อมต่อกับฐานข้อมูล MySQL
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'database.php';
 
 // กำหนดตัวแปรสำหรับเก็บที่อยู่ไฟล์ที่จะอัปโหลด
 $target_dir = "uploadfile/";
@@ -42,8 +31,11 @@ if($imageFileType != "xlsx" && $imageFileType != "xls") {
 
 // ตรวจสอบว่าไฟล์มีอยู่หรือไม่
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
+    // ถ้ามีไฟล์อยู่แล้ว สร้างชื่อใหม่โดยเพิ่มวันที่และเวลาขณะอัปโหลด
+    $timestamp = date("Ymd_His");
+    $file_extension = pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION);
+    $new_filename = "" . $timestamp . "." . $file_extension;
+    $target_file = $target_dir . $new_filename;
 }
 
 // จำกัดขนาดของไฟล์
@@ -97,7 +89,6 @@ if ($uploadOk == 0) {
         }
 
         if ($success) {
-
             ?>
             <script>
                 Swal.fire({
@@ -113,10 +104,7 @@ if ($uploadOk == 0) {
             });
             </script>
             <?php
-            
         }
-        
-        
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
