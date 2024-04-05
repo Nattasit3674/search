@@ -48,8 +48,9 @@
 <body>
     <div class="container">
         <h2>Upload an Excel File</h2>
-        <form action="upload_excel.php" method="post" enctype="multipart/form-data" id="uploadForm">
-            Select Excel file to upload:
+        <form action="upload_excel" method="post" enctype="multipart/form-data" id="uploadForm">
+            หมายเหตุ : ชื่อบุคลากรต้องอยู่ใน Column B <br><br>
+            Select Excel file to upload:<br>
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload File" name="submit">
         </form>

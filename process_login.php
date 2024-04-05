@@ -11,7 +11,7 @@ if(isset($_POST['fig_code'])) {
     // ตรวจสอบว่า fig code ที่ผู้ใช้ป้อนเข้ามาถูกต้องหรือไม่
     if($entered_fig_code === $correct_fig_code) {
         // ถ้าถูกต้อง redirect ไปยังหน้าสำหรับการ login สำเร็จ
-        header("Location: upload_file.html");
+        header("Location: upload_file");
         exit(); // ออกจากการประมวลผล PHP
     } else {
         // ถ้าไม่ถูกต้องแสดงข้อความว่า fig code ไม่ถูกต้อง

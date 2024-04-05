@@ -64,7 +64,7 @@ if ($uploadOk == 0) {
 // อัปโหลดไฟล์
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        //echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 
         // อ่านข้อมูลจากไฟล์ Excel
         $inputFileName = $target_file;
@@ -75,7 +75,7 @@ if ($uploadOk == 0) {
         // Truncate ข้อมูลในตารางก่อน
         $truncateSql = "TRUNCATE TABLE employees_test";
         if ($conn->query($truncateSql) === TRUE) {
-            echo "Table truncated successfully.";
+            //echo "Table truncated successfully.";
         } else {
             echo "Error truncating table: " . $conn->error;
         }
@@ -108,7 +108,7 @@ if ($uploadOk == 0) {
                 allowOutsideClick: false // Prevent dismissing by clicking outside
                 }).then((result) => {
                     if (result.isConfirmed) {
-                    window.location.href = "index.html";
+                    window.location.href = "index";
                 }
             });
             </script>

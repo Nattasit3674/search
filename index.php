@@ -12,16 +12,16 @@
 </head>
 <body>
     <div class="container">
-    <h1>Search Employees</h1>   
+    <h1>ค้นหารายชื่อ Provider ID</h1>   
     <div class="row">
         <div class="col">
-          <input type="text" class="form-control" id="searchInput" placeholder="Enter search query">
+          <input type="text" class="form-control" id="searchInput" placeholder="ค้นหารายชื่อ...">
         </div>
         <div class="col">
-          <button class="btn btn-primary" onclick="search()">Search</button>
+          <button class="btn btn-primary" onclick="search()">ค้นหา</button>
         </div>
         <div class="col">
-          <a href="login_page.html" class="btn btn-secondary">Login with Fig</a>
+          <a href="login_page" class="btn btn-secondary">เข้าสู่ระบบสำหรับแอดมิน</a>
         </div>
       </div>
     
